@@ -1,4 +1,4 @@
-package com.fhcs.clothing_store.infrastructure.in.rest;
+package com.fhcs.clothing_store.infrastructure.in.rest.controller;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
