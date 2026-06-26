@@ -6,7 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
-import com.fhcs.clothing_store.application.port.out.product.ProductRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.product.ProductRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.product.ProductBO;
 import com.fhcs.clothing_store.infrastructure.out.persistence.jpa.product.ProductRepository;
 import com.fhcs.clothing_store.infrastructure.out.persistence.mapper.ProductEntityMapper;

@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Component;
 
-import com.fhcs.clothing_store.application.port.out.cart.CartRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.cart.CartRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.cart.CartBO;
 import com.fhcs.clothing_store.core.domain.bo.cart.CartStatusBO;
 import com.fhcs.clothing_store.infrastructure.out.persistence.entity.PrivateIndividual;

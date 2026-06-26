@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fhcs.clothing_store.application.port.out.product.variation.ProductVariationRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.product.variation.ProductVariationRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.product.variation.ProductVariationBO;
 import com.fhcs.clothing_store.infrastructure.in.rest.dto.response.product.variation.ProductVariationDto;
 import com.fhcs.clothing_store.infrastructure.in.rest.mapper.ProductDtoMapper;

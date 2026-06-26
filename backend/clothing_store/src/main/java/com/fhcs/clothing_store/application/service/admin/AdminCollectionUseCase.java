@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.fhcs.clothing_store.application.port.in.service.admin.AdminCollectionServicePort;
-import com.fhcs.clothing_store.application.port.out.product.CollectionRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.product.CollectionRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.product.CollectionBO;
 import com.fhcs.clothing_store.infrastructure.in.rest.dto.CollectionPatchDto;
 import com.fhcs.clothing_store.infrastructure.in.rest.dto.request.product.CollectionRequest;

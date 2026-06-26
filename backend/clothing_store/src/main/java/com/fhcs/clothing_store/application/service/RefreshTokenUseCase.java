@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fhcs.clothing_store.application.port.in.service.RefreshTokenServicePort;
-import com.fhcs.clothing_store.application.port.out.RefreshTokenRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.RefreshTokenRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.RefreshTokenBO;
 import com.fhcs.clothing_store.core.domain.bo.UserBO;
 import com.fhcs.clothing_store.core.domain.exception.InvalidTokenException;

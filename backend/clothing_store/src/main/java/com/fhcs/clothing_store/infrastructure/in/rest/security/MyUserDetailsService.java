@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.fhcs.clothing_store.application.port.out.UserRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.UserRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.UserBO;
 
 @Service

@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
-import com.fhcs.clothing_store.application.port.out.address.AddressRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.address.AddressRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.address.AddressBO;
 import com.fhcs.clothing_store.core.domain.bo.address.IndividualAddressBO;
 import com.fhcs.clothing_store.infrastructure.out.persistence.jpa.address.AddressRepository;

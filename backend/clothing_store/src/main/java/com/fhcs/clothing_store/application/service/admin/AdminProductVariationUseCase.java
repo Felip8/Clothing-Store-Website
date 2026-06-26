@@ -3,9 +3,9 @@ package com.fhcs.clothing_store.application.service.admin;
 import org.springframework.stereotype.Service;
 
 import com.fhcs.clothing_store.application.port.in.service.admin.AdminProductVariationServicePort;
-import com.fhcs.clothing_store.application.port.out.product.variation.ColorRepositoryPort;
-import com.fhcs.clothing_store.application.port.out.product.variation.ProductVariationRepositoryPort;
-import com.fhcs.clothing_store.application.port.out.product.variation.SizeRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.product.variation.ColorRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.product.variation.ProductVariationRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.product.variation.SizeRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.product.ProductBO;
 import com.fhcs.clothing_store.core.domain.bo.product.variation.ColorBO;
 import com.fhcs.clothing_store.core.domain.bo.product.variation.ProductVariationBO;

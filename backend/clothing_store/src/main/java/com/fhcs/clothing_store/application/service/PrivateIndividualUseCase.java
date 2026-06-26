@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.fhcs.clothing_store.application.port.in.service.PrivateIndividualServicePort;
 import com.fhcs.clothing_store.application.port.out.JwtPort;
-import com.fhcs.clothing_store.application.port.out.PrivateIndividualRepositoryPort;
-import com.fhcs.clothing_store.application.port.out.UserRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.PrivateIndividualRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.UserRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.PrivateIndividualBO;
 import com.fhcs.clothing_store.core.domain.bo.UserBO;
 import com.fhcs.clothing_store.core.domain.bo.address.AddressBO;

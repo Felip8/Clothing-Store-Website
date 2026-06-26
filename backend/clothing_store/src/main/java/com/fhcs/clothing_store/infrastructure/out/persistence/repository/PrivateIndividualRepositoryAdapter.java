@@ -2,7 +2,7 @@ package com.fhcs.clothing_store.infrastructure.out.persistence.repository;
 
 import org.springframework.stereotype.Component;
 
-import com.fhcs.clothing_store.application.port.out.PrivateIndividualRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.PrivateIndividualRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.PrivateIndividualBO;
 import com.fhcs.clothing_store.infrastructure.out.persistence.jpa.PrivateIndividualRepository;
 import com.fhcs.clothing_store.infrastructure.out.persistence.mapper.PrivateIndividualEntityMapper;

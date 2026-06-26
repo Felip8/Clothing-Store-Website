@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.fhcs.clothing_store.application.port.in.service.admin.AdminCategoryServicePort;
-import com.fhcs.clothing_store.application.port.out.product.CategoryRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.product.CategoryRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.product.CategoryBO;
 import com.fhcs.clothing_store.infrastructure.in.rest.dto.CategoryPatch;
 import com.fhcs.clothing_store.infrastructure.in.rest.dto.request.product.CategoryRequest;

@@ -2,7 +2,7 @@ package com.fhcs.clothing_store.infrastructure.out.persistence.repository;
 
 import org.springframework.stereotype.Component;
 
-import com.fhcs.clothing_store.application.port.out.address.CityRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.address.CityRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.address.CityBO;
 import com.fhcs.clothing_store.infrastructure.out.persistence.jpa.address.CityRepository;
 import com.fhcs.clothing_store.infrastructure.out.persistence.mapper.AddressEntityMapper;

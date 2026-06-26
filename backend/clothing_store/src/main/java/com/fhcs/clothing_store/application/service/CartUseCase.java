@@ -7,9 +7,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.fhcs.clothing_store.application.port.in.service.CartServicePort;
 import com.fhcs.clothing_store.application.port.in.service.PrivateIndividualServicePort;
-import com.fhcs.clothing_store.application.port.out.cart.CartItemRepositoryPort;
-import com.fhcs.clothing_store.application.port.out.cart.CartRepositoryPort;
-import com.fhcs.clothing_store.application.port.out.product.variation.ProductVariationRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.cart.CartItemRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.cart.CartRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.product.variation.ProductVariationRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.PrivateIndividualBO;
 import com.fhcs.clothing_store.core.domain.bo.cart.CartBO;
 import com.fhcs.clothing_store.core.domain.bo.cart.CartItemBO;

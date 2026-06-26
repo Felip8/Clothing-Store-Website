@@ -1,13 +1,12 @@
 package com.fhcs.clothing_store.infrastructure.out.persistence.repository;
 
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
-import com.fhcs.clothing_store.application.port.out.order.OrderRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.order.OrderRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.order.OrderBO;
 import com.fhcs.clothing_store.infrastructure.out.persistence.entity.PrivateIndividual;
 import com.fhcs.clothing_store.infrastructure.out.persistence.entity.order.Order;

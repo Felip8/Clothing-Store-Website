@@ -12,7 +12,7 @@ import com.fhcs.clothing_store.application.port.in.service.RefreshTokenServicePo
 import com.fhcs.clothing_store.application.port.in.service.UserServicePort;
 import com.fhcs.clothing_store.application.port.out.JwtPort;
 import com.fhcs.clothing_store.application.port.out.PasswordEncoderPort;
-import com.fhcs.clothing_store.application.port.out.UserRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.UserRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.AuthResultBO;
 import com.fhcs.clothing_store.core.domain.bo.UserBO;
 import com.fhcs.clothing_store.core.domain.exception.InvalidTokenException;

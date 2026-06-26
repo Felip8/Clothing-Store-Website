@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Component;
 
-import com.fhcs.clothing_store.application.port.out.product.variation.SizeRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.product.variation.SizeRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.product.variation.SizeBO;
 import com.fhcs.clothing_store.infrastructure.out.persistence.jpa.product.variation.SizeRepository;
 import com.fhcs.clothing_store.infrastructure.out.persistence.mapper.ProductEntityMapper;

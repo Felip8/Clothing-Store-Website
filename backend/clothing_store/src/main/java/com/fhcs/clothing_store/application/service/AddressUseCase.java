@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.fhcs.clothing_store.application.port.out.ViaCepPort;
-import com.fhcs.clothing_store.application.port.out.address.AddressRepositoryPort;
-import com.fhcs.clothing_store.application.port.out.address.CepRepositoryPort;
-import com.fhcs.clothing_store.application.port.out.address.CityRepositoryPort;
-import com.fhcs.clothing_store.application.port.out.address.IndividualAddressRepositoryPort;
-import com.fhcs.clothing_store.application.port.out.address.StateRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.address.AddressRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.address.CepRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.address.CityRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.address.IndividualAddressRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.address.StateRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.PrivateIndividualBO;
 import com.fhcs.clothing_store.core.domain.bo.ViaCepDataBO;
 import com.fhcs.clothing_store.core.domain.bo.address.AddressBO;

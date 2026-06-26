@@ -5,7 +5,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.fhcs.clothing_store.application.port.in.service.admin.AdminProductServicePort;
-import com.fhcs.clothing_store.application.port.out.product.ProductRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.product.ProductRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.product.CategoryBO;
 import com.fhcs.clothing_store.core.domain.bo.product.CollectionBO;
 import com.fhcs.clothing_store.core.domain.bo.product.ProductBO;

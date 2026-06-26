@@ -2,7 +2,7 @@ package com.fhcs.clothing_store.infrastructure.out.persistence.repository;
 
 import org.springframework.stereotype.Component;
 
-import com.fhcs.clothing_store.application.port.out.RoleRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.RoleRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.RoleBO;
 import com.fhcs.clothing_store.infrastructure.out.persistence.jpa.RoleRepository;
 import com.fhcs.clothing_store.infrastructure.out.persistence.mapper.UserEntityMapper;

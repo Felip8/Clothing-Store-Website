@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Component;
 
-import com.fhcs.clothing_store.application.port.out.product.variation.ColorRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.product.variation.ColorRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.product.variation.ColorBO;
 import com.fhcs.clothing_store.infrastructure.out.persistence.jpa.product.variation.ColorRepository;
 import com.fhcs.clothing_store.infrastructure.out.persistence.mapper.ProductEntityMapper;

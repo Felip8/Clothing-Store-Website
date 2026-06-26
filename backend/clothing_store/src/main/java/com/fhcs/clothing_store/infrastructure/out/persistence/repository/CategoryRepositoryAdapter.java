@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
-import com.fhcs.clothing_store.application.port.out.product.CategoryRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.product.CategoryRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.product.CategoryBO;
 import com.fhcs.clothing_store.infrastructure.out.persistence.jpa.product.CategoryRepository;
 import com.fhcs.clothing_store.infrastructure.out.persistence.mapper.ProductEntityMapper;

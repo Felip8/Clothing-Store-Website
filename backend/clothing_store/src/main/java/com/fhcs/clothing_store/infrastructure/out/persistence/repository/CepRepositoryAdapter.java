@@ -2,7 +2,7 @@ package com.fhcs.clothing_store.infrastructure.out.persistence.repository;
 
 import org.springframework.stereotype.Component;
 
-import com.fhcs.clothing_store.application.port.out.address.CepRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.address.CepRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.address.CepBO;
 import com.fhcs.clothing_store.infrastructure.out.persistence.jpa.address.CEPRepository;
 import com.fhcs.clothing_store.infrastructure.out.persistence.mapper.AddressEntityMapper;

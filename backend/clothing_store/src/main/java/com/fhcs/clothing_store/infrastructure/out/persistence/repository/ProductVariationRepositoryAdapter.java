@@ -7,7 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
-import com.fhcs.clothing_store.application.port.out.product.variation.ProductVariationRepositoryPort;
+import com.fhcs.clothing_store.application.port.out.persistence.product.variation.ProductVariationRepositoryPort;
 import com.fhcs.clothing_store.core.domain.bo.product.variation.ProductVariationBO;
 import com.fhcs.clothing_store.infrastructure.out.persistence.entity.product.variation.ProductVariation;
 import com.fhcs.clothing_store.infrastructure.out.persistence.jpa.product.variation.ProductVariationRepository;
