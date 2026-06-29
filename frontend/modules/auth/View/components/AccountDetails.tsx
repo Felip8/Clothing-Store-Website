@@ -2,9 +2,19 @@
 
 import { useAuth } from "@/modules/auth/View/contexts/AuthContext";
 import { LogOut, UserCircle } from "lucide-react";
+import router from "next/router";
 
 export function AccountDetails() {
   const { user } = useAuth();
+
+  const {logout} = useAuth();
+
+  const handleLogout = async () => {
+
+  await logout();
+
+  router.push('account')
+}
 
   if (!user) {
     return <div>Loading...</div>;
@@ -24,7 +34,7 @@ export function AccountDetails() {
             </div>
           </div>
           <button
-            onClick={() => {}}
+            onClick={handleLogout}
             className="flex items-center gap-2 px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors"
           >
             <LogOut className="h-4 w-4" />
