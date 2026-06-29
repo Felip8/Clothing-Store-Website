@@ -1,3 +1,5 @@
+import { ProductImages } from "./productImages";
+
 export interface Product {
   productId: number;
   name: string;
@@ -12,4 +14,5 @@ export interface Product {
     name: string;
   };
   score?: number;
+  images?: ProductImages[];
 }

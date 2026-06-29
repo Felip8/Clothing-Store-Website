@@ -10,6 +10,7 @@ import { categoryService, type Category } from "@/modules/product/Model/services
 import { collectionService, type Collection } from "@/modules/product/Model/services/colectionService";
 import { Button } from "@/shared/components/ui/button";
 import { productService } from "@/modules/product/Model/services/productService";
+import { Product } from "../../Model/models/product";
 
 interface ProductFormData {
     name: string;
@@ -73,9 +74,18 @@ export function ProductCreateForm({ onSubmit, onCancel }: ProductCreateFormProps
         handleFieldChange("collectionId", collection.collectionId);
     }
 
+    const ALLOWED_IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
+
+    const isValidImageType = (file: File) => ALLOWED_IMAGE_TYPES.includes(file.type);
+
     const handleMainImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (!file) return;
+        if (!isValidImageType(file)) {
+            setError("A imagem principal deve ser JPEG, PNG ou WebP.");
+            e.target.value = "";
+            return;
+        }
         setFormData(prev => ({ ...prev, mainImage: file }));
         setMainImagePreview(URL.createObjectURL(file));
     };
@@ -83,6 +93,12 @@ export function ProductCreateForm({ onSubmit, onCancel }: ProductCreateFormProps
     const handleGalleryImagesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const files = Array.from(e.target.files ?? []);
         if (!files.length) return;
+        const invalidFile = files.find(f => !isValidImageType(f));
+        if (invalidFile) {
+            setError(`"${invalidFile.name}" não é um tipo de imagem válido. Use JPEG, PNG ou WebP.`);
+            e.target.value = "";
+            return;
+        }
         setFormData(prev => ({ ...prev, galleryImages: [...prev.galleryImages, ...files] }));
         setGalleryPreviews(prev => [...prev, ...files.map(f => URL.createObjectURL(f))]);
     };
@@ -104,6 +120,11 @@ export function ProductCreateForm({ onSubmit, onCancel }: ProductCreateFormProps
             return;
         }
 
+        if (!formData.mainImage) {
+            setError("A imagem principal é obrigatória.");
+            return;
+        }
+
         try {
             setIsSubmitting(true);
 
@@ -115,7 +136,18 @@ export function ProductCreateForm({ onSubmit, onCancel }: ProductCreateFormProps
                 price: parseFloat(formData.price),
                 score: 0,
             }
-            await productService.createProduct(productRequest);
+            const productResponse = await productService.createProduct(productRequest);
+
+            const productImageRequest = {
+                productId: productResponse.productId,
+                mainImage: formData.mainImage,
+                carouselImages: formData.galleryImages
+            }
+
+            const images = await productService.uploadImages(productImageRequest);
+
+            const product: Product = {...productResponse, images};
+        
             onSubmit();
         } catch (err) {
             setError(err instanceof Error ? err.message : "Erro ao cadastrar produto.");
