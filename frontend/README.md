@@ -1,69 +1,52 @@
-# React + TypeScript + Vite
+# Gerenciamento de Produtos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Criar um produto
 
-Currently, two official plugins are available:
+Acesse o painel administrativo utilizando a rota /admin e clique em **"Adicionar produto"**. Preencha os campos do formulário e clique em **"Adicionar"** para salvar.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Campos obrigatórios
 
-## Expanding the ESLint configuration
+| Campo | Tipo | Descrição |
+|---|---|---|
+| Nome do Produto | Texto | Nome exibido na loja |
+| Categoria | Seleção | Categoria à qual o produto pertence |
+| Coleção | Seleção | Coleção à qual o produto pertence |
+| Preço | Número decimal | Valor em reais (ex: `99.90`) |
+| Imagem principal | Arquivo | Foto de capa do produto |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Campos opcionais
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Campo | Tipo | Descrição |
+|---|---|---|
+| Descrição | Texto longo | Detalhes sobre o produto |
+| Galeria de imagens | Múltiplos arquivos | Fotos adicionais exibidas no carrossel |
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+> **Formatos aceitos para imagens:** JPEG, PNG e WebP.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Editar um produto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Na listagem de produtos, clique no ícone de menu (**⋮**) no canto superior direito do card e selecione **"Editar"**.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Os seguintes campos podem ser atualizados:
+
+| Campo | Descrição |
+|---|---|
+| Nome do Produto | Renomeia o produto |
+| Descrição | Altera o texto descritivo |
+| Categoria | Muda a categoria do produto |
+| Coleção | Muda a coleção do produto |
+| Preço | Atualiza o valor de venda |
+
+Após realizar as alterações, clique em **"Salvar alterações"** para confirmar.
+
+---
+
+## Excluir um produto
+
+1. Na listagem de produtos, clique no ícone de menu (**⋮**) no canto superior direito do card do produto.
+2. Selecione **"Excluir"**.
+3. Uma confirmação será exibida diretamente no card. Clique em **"Excluir"** para confirmar ou em **"Cancelar"** para voltar.
+
+> **Atenção:** esta ação é permanente e não pode ser desfeita.
