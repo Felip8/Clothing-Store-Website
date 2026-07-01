@@ -1,6 +1,6 @@
 "use client";
 
-import { LayoutDashboard, Package, FileText, ChevronDown, ChevronUp } from "lucide-react";
+import { LayoutDashboard, Package, FileText, ChevronDown, ChevronUp, Tag, Layers } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -67,6 +67,32 @@ export function AdminSidebar() {
         >
           <FileText className="w-5 h-5" />
           <span className="font-medium">ORDEM DOS PEDIDOS</span>
+        </Link>
+
+        <Link
+          href="/admin/categories"
+          className={cn(
+            "flex items-center gap-3 px-4 py-3 rounded-lg transition-colors",
+            pathname === "/admin/categories"
+              ? "bg-blue-50 text-blue-600"
+              : "text-gray-700 hover:bg-gray-50"
+          )}
+        >
+          <Tag className="w-5 h-5" />
+          <span className="font-medium">CATEGORIAS</span>
+        </Link>
+
+        <Link
+          href="/admin/collections"
+          className={cn(
+            "flex items-center gap-3 px-4 py-3 rounded-lg transition-colors",
+            pathname === "/admin/collections"
+              ? "bg-blue-50 text-blue-600"
+              : "text-gray-700 hover:bg-gray-50"
+          )}
+        >
+          <Layers className="w-5 h-5" />
+          <span className="font-medium">COLEÇÕES</span>
         </Link>
 
         {/* Category Filter */}
