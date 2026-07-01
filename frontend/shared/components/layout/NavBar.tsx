@@ -3,18 +3,27 @@
 import { Heart, Menu, Search, ShoppingCart, User, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/shared/components/ui/button";
+import { useAuth } from "@/modules/auth/View/contexts/AuthContext";
+import { tokenUtil } from "@/lib/tokenUtil";
 
 export function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const router = useRouter();
+    const { isAuthenticated } = useAuth();
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() => {
+        setIsAdmin(isAuthenticated && tokenUtil.isAdmin());
+    }, [isAuthenticated]);
 
     const navLinks = [
         { label: 'MAIS VENDIDOS', href: '#' },
         { label: 'CAMISETAS', href: '#' },
         { label: 'LANÇAMENTOS', href: '#' },
         { label: 'COLEÇÕES', href: '#' },
+        ...(isAdmin ? [{ label: 'ADMIN', href: '/admin' }] : []),
     ];
 
     return (
@@ -56,37 +65,38 @@ export function NavBar() {
         }
       `}</style>
             <header className="font-['Britanica',sans-serif]">
-                <nav className="w-full fixed top-0 left-0 right-0 px-[3%] py-4 bg-transparent border-b border-white/5 backdrop-blur-[15px] flex items-center justify-between transition-colors duration-300 ease-in-out z-10">
-                    {/* Mobile Menu Button */}
-                    <button
-                        className="mobile-menu-btn md:hidden text-white transition-colors duration-300 ease-in-out"
-                        onClick={() => setIsMenuOpen(true)}
-                        aria-label="Open menu"
-                    >
-                        <Menu className="w-6 h-6" />
-                    </button>
+                <nav className="w-full fixed top-0 left-0 right-0 px-[3%] py-4 bg-transparent border-b border-white/5 backdrop-blur-[15px] grid grid-cols-[auto_1fr_auto] items-center transition-colors duration-300 ease-in-out z-10">
+                    {/* Left: Mobile Menu Button + Desktop Navigation Links */}
+                    <div className="flex items-center">
+                        <button
+                            className="mobile-menu-btn lg:hidden text-white transition-colors duration-300 ease-in-out"
+                            onClick={() => setIsMenuOpen(true)}
+                            aria-label="Open menu"
+                        >
+                            <Menu className="w-6 h-6" />
+                        </button>
 
-                    {/* Logo - Centered */}
-                    <div className="logo absolute left-1/2 -translate-x-1/2 text-[1.8rem] md:text-[1.8rem] text-white font-bold transition-colors duration-300 ease-in-out max-[480px]:text-[1.2rem]">
+                        <ul className="hidden lg:flex list-none gap-8 font-['Alexandria',sans-serif]">
+                            {navLinks.map((link) => (
+                                <li key={link.label}>
+                                    <Link
+                                        href={link.href}
+                                        className="nav-link relative text-[1.05rem] font-medium text-white no-underline transition-colors duration-300 ease-in-out"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Logo - Centered column, never overlapped by side content */}
+                    <div className="logo justify-self-center text-[1.8rem] text-white font-bold transition-colors duration-300 ease-in-out max-[480px]:text-[1.2rem]">
                         vérticecompany
                     </div>
 
-                    {/* Desktop Navigation Links */}
-                    <ul className="hidden md:flex list-none gap-8 font-['Alexandria',sans-serif]">
-                        {navLinks.map((link) => (
-                            <li key={link.label}>
-                                <a
-                                    href={link.href}
-                                    className="nav-link relative text-[1.05rem] font-medium text-white no-underline transition-colors duration-300 ease-in-out"
-                                >
-                                    {link.label}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-
                     {/* Icons */}
-                    <ul className="flex list-none gap-4 md:gap-4 max-[768px]:gap-[0.7rem]">
+                    <ul className="flex list-none gap-4 md:gap-4 max-[768px]:gap-[0.7rem] justify-self-end">
                         <li>
                             <Button variant="ghost" aria-label="Search" asChild>
                                 <Link href="/search">
@@ -129,15 +139,51 @@ export function NavBar() {
                     <ul className="flex flex-col items-center list-none gap-8 font-['Alexandria',sans-serif]">
                         {navLinks.map((link) => (
                             <li key={link.label}>
-                                <a
+                                <Link
                                     href={link.href}
                                     onClick={() => setIsMenuOpen(false)}
                                     className="text-2xl font-medium text-black no-underline hover:opacity-70 transition-opacity"
                                 >
                                     {link.label}
-                                </a>
+                                </Link>
                             </li>
                         ))}
+                    </ul>
+
+                    <ul className="flex list-none gap-6 mt-10">
+                        <li>
+                            <Button variant="ghost" aria-label="Search" asChild onClick={() => setIsMenuOpen(false)}>
+                                <Link href="/search">
+                                    <Search className="w-6 h-6 text-black" />
+                                </Link>
+                            </Button>
+                        </li>
+                        <li>
+                            <Button variant="ghost" aria-label="Favorites" asChild onClick={() => setIsMenuOpen(false)}>
+                                <Link href="/favorites">
+                                    <Heart className="w-6 h-6 text-black" />
+                                </Link>
+                            </Button>
+                        </li>
+                        <li>
+                            <Button variant="ghost" aria-label="Shopping Cart" asChild onClick={() => setIsMenuOpen(false)}>
+                                <Link href="/cart">
+                                    <ShoppingCart className="w-6 h-6 text-black" />
+                                </Link>
+                            </Button>
+                        </li>
+                        <li>
+                            <Button
+                                variant="ghost"
+                                aria-label="User Account"
+                                onClick={() => {
+                                    setIsMenuOpen(false);
+                                    router.push('/account');
+                                }}
+                            >
+                                <User className="w-6 h-6 text-black" />
+                            </Button>
+                        </li>
                     </ul>
                 </div>
             </header>

@@ -1,11 +1,12 @@
 "use client";
 
 import { useAuth } from "@/modules/auth/View/contexts/AuthContext";
-import { LogOut, UserCircle } from "lucide-react";
-import router from "next/router";
+import { Home, LogOut, UserCircle } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export function AccountDetails() {
   const { user } = useAuth();
+  const router = useRouter();
 
   const {logout} = useAuth();
 
@@ -13,7 +14,7 @@ export function AccountDetails() {
 
   await logout();
 
-  router.push('account')
+  router.push('/account')
 }
 
   if (!user) {
@@ -33,13 +34,22 @@ export function AccountDetails() {
               <p className="text-gray-600">{user.email}</p>
             </div>
           </div>
-          <button
-            onClick={handleLogout}
-            className="flex items-center gap-2 px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors"
-          >
-            <LogOut className="h-4 w-4" />
-            Logout
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => router.push('/')}
+              className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+            >
+              <Home className="h-4 w-4" />
+              Home
+            </button>
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors"
+            >
+              <LogOut className="h-4 w-4" />
+              Logout
+            </button>
+          </div>
         </div>
 
         <div className="space-y-6">

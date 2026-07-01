@@ -1,6 +1,6 @@
 "use client";
 
-import { LayoutDashboard, Package, FileText, ChevronDown, ChevronUp, Tag, Layers } from "lucide-react";
+import { Home, LayoutDashboard, Package, FileText, ChevronDown, ChevronUp, Tag, Layers } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -30,6 +30,14 @@ export function AdminSidebar() {
 
       {/* Navigation */}
       <nav className="flex-1 p-4 space-y-2">
+        <Link
+          href="/"
+          className="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-700 hover:bg-gray-50 border-b border-gray-200 mb-2 pb-4"
+        >
+          <Home className="w-5 h-5" />
+          <span className="font-medium">HOME</span>
+        </Link>
+
         <Link
           href="/admin"
           className={cn(
